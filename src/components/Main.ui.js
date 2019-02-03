@@ -34,6 +34,7 @@ import AddToken from '../connectors/scenes/AddTokenConnector.js'
 import ChangeMiningFeeSendConfirmation from '../connectors/scenes/ChangeMiningFeeSendConfirmationConnector.ui'
 import ChangePasswordConnector from '../connectors/scenes/ChangePasswordConnector.ui'
 import ChangePinConnector from '../connectors/scenes/ChangePinConnector.ui'
+import { CreateWalletChoice } from '../components/scenes/CreateWalletChoiceScene.js'
 import { CreateWalletAccountSelectConnector } from '../connectors/scenes/CreateWalletAccountSelectConnector.js'
 import { CreateWalletAccountSetupConnector } from '../connectors/scenes/CreateWalletAccountSetupConnector.js'
 import { CreateWalletReview } from '../connectors/scenes/CreateWalletReviewConnector'
@@ -384,11 +385,20 @@ export default class Main extends Component<Props> {
                         />
 
                         <Scene
+                          key={Constants.CREATE_WALLET_CHOICE}
+                          navTransparent={true}
+                          component={CreateWalletChoice}
+                          renderTitle={this.renderTitle(CREATE_WALLET)}
+                          renderLeftButton={this.renderBackButton(WALLETS)}
+                          renderRightButton={this.renderEmptyButton()}
+                        />
+
+                        <Scene
                           key={Constants.CREATE_WALLET_SELECT_CRYPTO}
                           navTransparent={true}
                           component={CreateWalletSelectCrypto}
                           renderTitle={this.renderTitle(CREATE_WALLET_SELECT_CRYPTO)}
-                          renderLeftButton={this.renderBackButton(WALLETS)}
+                          renderLeftButton={this.renderBackButton()}
                           renderRightButton={this.renderEmptyButton()}
                         />
 
