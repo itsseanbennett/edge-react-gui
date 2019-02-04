@@ -26,6 +26,9 @@ import scanIconSelected from '../assets/images/tabbar/scan_selected.png'
 import scanIcon from '../assets/images/tabbar/scan.png'
 import walletIconSelected from '../assets/images/tabbar/wallets_selected.png'
 import walletIcon from '../assets/images/tabbar/wallets.png'
+import { CreateWalletChoiceComponent } from '../components/scenes/CreateWalletChoiceScene.js'
+import { CreateWalletImportComponent } from '../components/scenes/CreateWalletImportScene.js'
+import { CreateWalletImportTransitionComponent } from '../components/scenes/CreateWalletImportTransitionScene.js'
 import ExchangeDropMenu from '../connectors/components/HeaderMenuExchangeConnector'
 import RequestDropMenu from '../connectors/components/HeaderMenuRequestConnector'
 import CurrencySettingsTitleConnector from '../connectors/CurrencySettingsTitleConnector.js'
@@ -34,7 +37,6 @@ import AddToken from '../connectors/scenes/AddTokenConnector.js'
 import ChangeMiningFeeSendConfirmation from '../connectors/scenes/ChangeMiningFeeSendConfirmationConnector.ui'
 import ChangePasswordConnector from '../connectors/scenes/ChangePasswordConnector.ui'
 import ChangePinConnector from '../connectors/scenes/ChangePinConnector.ui'
-import { CreateWalletChoice } from '../components/scenes/CreateWalletChoiceScene.js'
 import { CreateWalletAccountSelectConnector } from '../connectors/scenes/CreateWalletAccountSelectConnector.js'
 import { CreateWalletAccountSetupConnector } from '../connectors/scenes/CreateWalletAccountSetupConnector.js'
 import { CreateWalletReview } from '../connectors/scenes/CreateWalletReviewConnector'
@@ -116,6 +118,7 @@ tabBarIconFilesSelected[Constants.EXCHANGE] = exchangeIconSelected
 
 const TRANSACTION_DETAILS = s.strings.title_transaction_details
 const WALLETS = s.strings.title_wallets
+const CREATE_WALLET_IMPORT = s.strings.create_wallet_import_title
 const CREATE_WALLET_SELECT_CRYPTO = s.strings.title_create_wallet_select_crypto
 const CREATE_WALLET_SELECT_FIAT = s.strings.title_create_wallet_select_fiat
 const CREATE_WALLET = s.strings.title_create_wallet
@@ -387,9 +390,27 @@ export default class Main extends Component<Props> {
                         <Scene
                           key={Constants.CREATE_WALLET_CHOICE}
                           navTransparent={true}
-                          component={CreateWalletChoice}
+                          component={CreateWalletChoiceComponent}
                           renderTitle={this.renderTitle(CREATE_WALLET)}
                           renderLeftButton={this.renderBackButton(WALLETS)}
+                          renderRightButton={this.renderEmptyButton()}
+                        />
+
+                        <Scene
+                          key={Constants.CREATE_WALLET_IMPORT}
+                          navTransparent={true}
+                          component={CreateWalletImportComponent}
+                          renderTitle={this.renderTitle(CREATE_WALLET_IMPORT)}
+                          renderLeftButton={this.renderBackButton()}
+                          renderRightButton={this.renderEmptyButton()}
+                        />
+
+                        <Scene
+                          key={Constants.CREATE_WALLET_IMPORT_TRANSITION}
+                          navTransparent={true}
+                          component={CreateWalletImportTransitionComponent}
+                          renderTitle={this.renderTitle(CREATE_WALLET_IMPORT)}
+                          renderLeftButton={this.renderEmptyButton()}
                           renderRightButton={this.renderEmptyButton()}
                         />
 

@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Image, ScrollView, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 
@@ -13,7 +13,9 @@ import Gradient from '../../modules/UI/components/Gradient/Gradient.ui'
 import SafeAreaView from '../../modules/UI/components/SafeAreaView/index'
 import styles from '../../styles/scenes/CreateWalletStyle.js'
 
-export class CreateWalletChoice extends Component<Props> {
+type CreateWalletChoiceProps = {}
+
+export class CreateWalletChoiceComponent extends PureComponent<CreateWalletChoiceProps> {
   render () {
     return (
       <SafeAreaView>
@@ -26,7 +28,7 @@ export class CreateWalletChoice extends Component<Props> {
                 <Text style={styles.instructionalText}>{s.strings.create_wallet_choice_instructions}</Text>
               </View>
               <View style={styles.buttons}>
-                <SecondaryButton style={[styles.next]} onPress={Actions[Constants.CREATE_WALLET_NAME]}>
+                <SecondaryButton style={[styles.next]} onPress={Actions[Constants.CREATE_WALLET_SELECT_CRYPTO]}>
                   <SecondaryButton.Text>{s.strings.create_wallet_choice_new_button}</SecondaryButton.Text>
                 </SecondaryButton>
               </View>

@@ -237,6 +237,15 @@ export const styles = {
     marginTop: scale(43),
     width: scale(25),
     height: scale(25)
+  },
+  createWalletImportTransitionView: {
+    flexDirection: 'column',
+    justifyContent: 'center'
+  },
+  createWalletImportTransitionText: {
+    fontSize: 24,
+    textAlign: 'center',
+    color: THEME.COLORS.SECONDARY
   }
 }
 
