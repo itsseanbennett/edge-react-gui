@@ -12,10 +12,23 @@ import Text from '../../modules/UI/components/FormattedText'
 import Gradient from '../../modules/UI/components/Gradient/Gradient.ui'
 import SafeAreaView from '../../modules/UI/components/SafeAreaView/index'
 import styles from '../../styles/scenes/CreateWalletStyle.js'
+import { type GuiWalletType } from '../../types.js'
 
-type CreateWalletChoiceProps = {}
+type CreateWalletChoiceProps = {
+  selectedWalletType: GuiWalletType
+}
 
 export class CreateWalletChoiceComponent extends PureComponent<CreateWalletChoiceProps> {
+  onSelectNew = () => {
+    const { selectedWalletType } = this.props
+    Actions[Constants.CREATE_WALLET_SELECT_CRYPTO]({ selectedWalletType })
+  }
+
+  onSelectRestore = () => {
+    const { selectedWalletType } = this.props
+    Actions[Constants.CREATE_WALLET_IMPORT]({ selectedWalletType })
+  }
+
   render () {
     return (
       <SafeAreaView>
@@ -28,12 +41,12 @@ export class CreateWalletChoiceComponent extends PureComponent<CreateWalletChoic
                 <Text style={styles.instructionalText}>{s.strings.create_wallet_choice_instructions}</Text>
               </View>
               <View style={styles.buttons}>
-                <SecondaryButton style={[styles.next]} onPress={Actions[Constants.CREATE_WALLET_SELECT_CRYPTO]}>
+                <SecondaryButton style={[styles.next]} onPress={this.onSelectNew}>
                   <SecondaryButton.Text>{s.strings.create_wallet_choice_new_button}</SecondaryButton.Text>
                 </SecondaryButton>
               </View>
               <View style={styles.buttons}>
-                <PrimaryButton style={[styles.next]} onPress={Actions[Constants.CREATE_WALLET_IMPORT]}>
+                <PrimaryButton style={[styles.next]} onPress={this.onSelectRestore}>
                   <PrimaryButton.Text>{s.strings.create_wallet_choice_restore_wallet}</PrimaryButton.Text>
                 </PrimaryButton>
               </View>

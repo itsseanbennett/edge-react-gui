@@ -201,7 +201,7 @@ export default class WalletList extends Component<Props, State> {
                     <TouchableOpacity style={styles.fiatToggleWrap} onPress={this.onFiatSwitchToggle}>
                       <T style={styles.toggleFiatText}>{this.props.isWalletFiatBalanceVisible ? s.strings.fragment_wallets_crypto_toggle_title : fiatSymbol}</T>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.walletsBoxHeaderAddWallet, { width: 41 }]} onPress={Actions[Constants.CREATE_WALLET_CHOICE]}>
+                    <TouchableOpacity style={[styles.walletsBoxHeaderAddWallet, { width: 41 }]} onPress={Actions[Constants.CREATE_WALLET_SELECT_CRYPTO]}>
                       <Ionicon name="md-add" style={[styles.dropdownIcon]} size={28} color="white" />
                     </TouchableOpacity>
                   </Animated.View>

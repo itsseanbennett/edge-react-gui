@@ -11,12 +11,15 @@ import Text from '../../modules/UI/components/FormattedText'
 import Gradient from '../../modules/UI/components/Gradient/Gradient.ui'
 import SafeAreaView from '../../modules/UI/components/SafeAreaView/index'
 import styles from '../../styles/scenes/CreateWalletStyle.js'
+import { type GuiWalletType } from '../../types.js'
 
 type CreateWalletImportTransitionState = {
   opacity: number
 }
 
-type CreateWalletImportTransitionProps = {}
+type CreateWalletImportTransitionProps = {
+  selectedWalletType: GuiWalletType
+}
 
 export class CreateWalletImportTransitionComponent extends Component<CreateWalletImportTransitionProps, CreateWalletImportTransitionState> {
   constructor (props: CreateWalletImportTransitionProps) {
@@ -27,6 +30,7 @@ export class CreateWalletImportTransitionComponent extends Component<CreateWalle
   }
 
   componentDidMount = () => {
+    const { selectedWalletType } = this.props
     setTimeout(() => {
       Animated.sequence([
         Animated.timing(this.state.opacity, {
@@ -42,7 +46,7 @@ export class CreateWalletImportTransitionComponent extends Component<CreateWalle
           duration: 1500
         })
       ]).start(() => {
-        Actions[Constants.CREATE_WALLET_NAME]()
+        Actions[Constants.CREATE_WALLET_SELECT_FIAT]({ selectedWalletType })
       })
     }, 400)
   }

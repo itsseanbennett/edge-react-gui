@@ -62,7 +62,7 @@ export class CreateWalletSelectCrypto extends Component<Props, State> {
 
   onNext = () => {
     if (this.isValidWalletType()) {
-      Actions[Constants.CREATE_WALLET_SELECT_FIAT]({
+      Actions[Constants.CREATE_WALLET_CHOICE]({
         selectedWalletType: this.getWalletType(this.state.selectedWalletType)
       })
     } else {

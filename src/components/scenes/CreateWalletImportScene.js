@@ -11,13 +11,16 @@ import Text from '../../modules/UI/components/FormattedText'
 import Gradient from '../../modules/UI/components/Gradient/Gradient.ui'
 import SafeAreaView from '../../modules/UI/components/SafeAreaView/index'
 import styles from '../../styles/scenes/CreateWalletStyle.js'
+import { type GuiWalletType } from '../../types.js'
 import { FormField } from '../common/FormField.js'
 
 type CreateWalletImportState = {
   input: string
 }
 
-type CreateWalletImportProps = {}
+type CreateWalletImportProps = {
+  selectedWalletType: GuiWalletType
+}
 
 export class CreateWalletImportComponent extends Component<CreateWalletImportProps, CreateWalletImportState> {
   constructor (props: CreateWalletImportProps) {
@@ -28,7 +31,8 @@ export class CreateWalletImportComponent extends Component<CreateWalletImportPro
   }
 
   onNext = () => {
-    Actions[Constants.CREATE_WALLET_IMPORT_TRANSITION]()
+    const { selectedWalletType } = this.props
+    Actions[Constants.CREATE_WALLET_IMPORT_TRANSITION]({ selectedWalletType })
   }
 
   onChangeText = (input: string) => {
