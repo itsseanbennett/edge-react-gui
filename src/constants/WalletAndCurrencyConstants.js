@@ -62,13 +62,16 @@ type SpecialCurrencyInfo = {
 
 export const SPECIAL_CURRENCY_INFO: SpecialCurrencyInfo = {
   BTC: {
-    displayBuyCrypto: true
+    displayBuyCrypto: true,
+    isImportKeySupported: false
   },
   BCH: {
-    displayBuyCrypto: true
+    displayBuyCrypto: true,
+    isImportKeySupported: false
   },
   LTC: {
-    displayBuyCrypto: true
+    displayBuyCrypto: true,
+    isImportKeySupported: false
   },
   XLM: {
     dummyPublicAddress: 'GBEVGJYAUKJ2TVPMC3GEPI2GGZQLMWZDRWJCVNBXCJ3ELYTDPHVQQM74',
@@ -82,7 +85,8 @@ export const SPECIAL_CURRENCY_INFO: SpecialCurrencyInfo = {
       minimumNativeBalance: '10000000',
       modalMessage: s.strings.request_xlm_minimum_notification_body
     },
-    displayBuyCrypto: false
+    displayBuyCrypto: false,
+    isImportKeySupported: false
   },
   XRP: {
     dummyPublicAddress: 'rfuESo7eHUnvebxgaFjfYxfwXhM2uBPAj3',
@@ -96,7 +100,8 @@ export const SPECIAL_CURRENCY_INFO: SpecialCurrencyInfo = {
       minimumNativeBalance: '20000000',
       modalMessage: s.strings.request_xrp_minimum_notification_body
     },
-    displayBuyCrypto: true
+    displayBuyCrypto: true,
+    isImportKeySupported: false
   },
   XMR: {
     dummyPublicAddress: '46qxvuS78CNBoiiKmDjvjd5pMAZrTBbDNNHDoP52jKj9j5mk6m4R5nU6BDrWQURiWV9a2n5Sy8Qo4aJskKa92FX1GpZFiYA',
@@ -106,7 +111,8 @@ export const SPECIAL_CURRENCY_INFO: SpecialCurrencyInfo = {
       addButtonText: s.strings.unique_identifier_dropdown_option_payment_id,
       identifierName: s.strings.unique_identifier_payment_id,
       identifierKeyboardType: 'default'
-    }
+    },
+    isImportKeySupported: false
   },
   EOS: {
     dummyPublicAddress: 'edgecreator2',
@@ -116,15 +122,18 @@ export const SPECIAL_CURRENCY_INFO: SpecialCurrencyInfo = {
       addButtonText: s.strings.unique_identifier_dropdown_option_memo,
       identifierName: s.strings.unique_identifier_memo,
       identifierKeyboardType: 'default'
-    }
+    },
+    isImportKeySupported: false
   },
   ETH: {
     dummyPublicAddress: '0x0d73358506663d484945ba85d0cd435ad610b0a0',
     allowZeroTx: true,
-    displayBuyCrypto: true
+    displayBuyCrypto: true,
+    isImportKeySupported: true
   },
   DAI: {
-    displayBuyCrypto: true
+    displayBuyCrypto: true,
+    isImportKeySupported: false
   }
 }
 

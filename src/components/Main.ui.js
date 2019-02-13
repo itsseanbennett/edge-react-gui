@@ -27,8 +27,6 @@ import scanIcon from '../assets/images/tabbar/scan.png'
 import walletIconSelected from '../assets/images/tabbar/wallets_selected.png'
 import walletIcon from '../assets/images/tabbar/wallets.png'
 import { CreateWalletChoiceComponent } from '../components/scenes/CreateWalletChoiceScene.js'
-import { CreateWalletImportComponent } from '../components/scenes/CreateWalletImportScene.js'
-import { CreateWalletImportTransitionComponent } from '../components/scenes/CreateWalletImportTransitionScene.js'
 import ExchangeDropMenu from '../connectors/components/HeaderMenuExchangeConnector'
 import RequestDropMenu from '../connectors/components/HeaderMenuRequestConnector'
 import CurrencySettingsTitleConnector from '../connectors/CurrencySettingsTitleConnector.js'
@@ -39,6 +37,7 @@ import ChangePasswordConnector from '../connectors/scenes/ChangePasswordConnecto
 import ChangePinConnector from '../connectors/scenes/ChangePinConnector.ui'
 import { CreateWalletAccountSelectConnector } from '../connectors/scenes/CreateWalletAccountSelectConnector.js'
 import { CreateWalletAccountSetupConnector } from '../connectors/scenes/CreateWalletAccountSetupConnector.js'
+import { CreateWalletImportConnector } from '../connectors/scenes/CreateWalletImportConnector.js'
 import { CreateWalletReview } from '../connectors/scenes/CreateWalletReviewConnector'
 import { CreateWalletSelectCrypto } from '../connectors/scenes/CreateWalletSelectCryptoConnector'
 import { CreateWalletSelectFiat } from '../connectors/scenes/CreateWalletSelectFiatConnector'
@@ -399,18 +398,9 @@ export default class Main extends Component<Props> {
                         <Scene
                           key={Constants.CREATE_WALLET_IMPORT}
                           navTransparent={true}
-                          component={CreateWalletImportComponent}
+                          component={CreateWalletImportConnector}
                           renderTitle={this.renderTitle(CREATE_WALLET_IMPORT)}
                           renderLeftButton={this.renderBackButton()}
-                          renderRightButton={this.renderEmptyButton()}
-                        />
-
-                        <Scene
-                          key={Constants.CREATE_WALLET_IMPORT_TRANSITION}
-                          navTransparent={true}
-                          component={CreateWalletImportTransitionComponent}
-                          renderTitle={this.renderTitle(CREATE_WALLET_IMPORT)}
-                          renderLeftButton={this.renderEmptyButton()}
                           renderRightButton={this.renderEmptyButton()}
                         />
 

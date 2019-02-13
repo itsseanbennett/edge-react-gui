@@ -15,7 +15,6 @@ export const WALLET_LIST_SCENE = 'walletListScene' // distinguished as actual sc
 export const WALLET_LIST_NOT_USED = 'walletList_notused'
 export const CREATE_WALLET_CHOICE = 'createWalletChoice'
 export const CREATE_WALLET_IMPORT = 'createWalletImport'
-export const CREATE_WALLET_IMPORT_TRANSITION = 'createWalletImportTransition'
 export const CREATE_WALLET_NAME = 'createWalletName'
 export const CREATE_WALLET_SELECT_CRYPTO = 'createWalletSelectCrypto'
 export const CREATE_WALLET_SELECT_FIAT = 'createWalletSelectFiat'
